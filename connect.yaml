@@ -54,8 +54,9 @@ deployAs:
           required: true
   - name: enabler
     applicationType: assets
-    configuration:
-      securedConfiguration:
-        - key: STRIPE_PUBLISHABLE_KEY
-          description: Stripe secret key (example - pk_*****).
-          required: true
+inheritAs:
+  configuration:
+    securedConfiguration:
+      - key: STRIPE_PUBLISHABLE_KEY
+        description: Stripe publishable key (example - pk_*****).
+        required: true
