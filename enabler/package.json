@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "@babel/preset-typescript": "^7.26.0",
-        "@stripe/stripe-js": "^4.9.0",
+        "@stripe/stripe-js": "^5.2.0",
         "serve": "14.2.4",
         "ts-node": "^10.9.2"
     },
@@ -28,7 +28,11 @@
         "sass": "1.82.0",
         "ts-jest": "^29.2.5",
         "typescript": "5.7.2",
-        "vite": "5.4.10",
+        "vite": "6.0.3",
         "vite-plugin-css-injected-by-js": "3.5.2"
-    }
+    },
+    "overrides": {
+        "braces": "^3.0.3"
+    },
+    "packageManager": "npm@10.9.0+sha512.65a9c38a8172948f617a53619762cd77e12b9950fe1f9239debcb8d62c652f2081824b986fee7c0af6c0a7df615becebe4bf56e17ec27214a87aa29d9e038b4b"
 }
