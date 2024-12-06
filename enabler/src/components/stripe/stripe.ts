@@ -48,6 +48,9 @@ export class StripePayment {
 
 
     constructor(options: BaseConfiguration) {
+        if (env.STRIPE_PUBLISHABLE_KEY) {
+            options.publishableKey = env.STRIPE_PUBLISHABLE_KEY
+        }
         this.setupData = StripePayment.setup(options);
         this.elementsConfiguration
     }
@@ -64,7 +67,7 @@ export class StripePayment {
 
         let environment = "live";
 
-        if(env.VITE_STRIPE_PUBLISHABLE_KEY?.includes("_test_")) {
+        if(options.publishableKey?.includes("_test_")) {
             environment = "test"
         }
 
