@@ -83,7 +83,11 @@ export const operationsRoute = async (fastify: FastifyInstance, opts: FastifyPlu
       ],
       schema: {
         params: {
-          id: Type.String(),
+          type: 'object',
+          properties: {
+            id: { type: 'string' },
+          },
+          required: ['id'],
         },
         body: PaymentIntentRequestSchema,
         response: {

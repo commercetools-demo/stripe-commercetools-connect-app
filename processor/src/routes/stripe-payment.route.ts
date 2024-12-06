@@ -113,7 +113,11 @@ export const configElementRoutes = async (
       preHandler: [opts.sessionHeaderAuthHook.authenticate()],
       schema: {
         params: {
-          paymentComponent: Type.String(),
+          type: 'object',
+          properties: {
+            paymentComponent: { type: 'string' },
+          },
+          required: ['paymentComponent'],
         },
         response: {
           200: ConfigElementResponseSchema,
