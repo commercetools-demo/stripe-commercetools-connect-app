@@ -48,6 +48,11 @@ export class StripePayment {
 
 
     constructor(options: BaseConfiguration) {
+        console.log('options', options, env);
+        
+        if (env.VITE_STRIPE_PUBLISHABLE_KEY) {
+            options.publishableKey = env.VITE_STRIPE_PUBLISHABLE_KEY
+        }
         this.setupData = StripePayment.setup(options);
         this.elementsConfiguration
     }
