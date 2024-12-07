@@ -64,7 +64,7 @@ export class StripePayment {
 
         let environment = "live";
 
-        if(options.publishableKey?.includes("_test_")) {
+        if(env.VITE_STRIPE_PUBLISHABLE_KEY?.includes("_test_")) {
             environment = "test"
         }
 
