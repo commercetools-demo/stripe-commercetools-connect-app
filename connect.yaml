@@ -57,6 +57,6 @@ deployAs:
 inheritAs:
   configuration:
     securedConfiguration:
-      - key: STRIPE_PUBLISHABLE_KEY
+      - key: VITE_STRIPE_PUBLISHABLE_KEY
         description: Stripe publishable key (example - pk_*****).
         required: true

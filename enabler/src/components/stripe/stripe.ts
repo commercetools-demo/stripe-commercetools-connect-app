@@ -2,8 +2,7 @@ import { Stripe, StripeElements, StripeElementsOptionsMode, StripeExpressCheckou
 import { PaymentElement } from "../payment-elements/payment-element";
 import { BaseConfiguration, StripeElementConfiguration } from "../base-configuration";
 import { ExpressCheckout } from "../payment-elements/express-checkout";
-import dotenv from "dotenv";
-dotenv.config();
+import env from "../../constants";
 
 export type StripeElementType = {
     type : string
@@ -49,9 +48,6 @@ export class StripePayment {
 
 
     constructor(options: BaseConfiguration) {
-        if (process.env.STRIPE_PUBLISHABLE_KEY) {
-            options.publishableKey = process.env.STRIPE_PUBLISHABLE_KEY
-        }
         this.setupData = StripePayment.setup(options);
         this.elementsConfiguration
     }
